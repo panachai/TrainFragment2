@@ -15,11 +15,9 @@ public class TwoFragment extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View rootView = inflater.inflate(R.layout.fragment_two, container, false);
 
         Button btn_close = (Button)rootView.findViewById(R.id.btn_close);
@@ -29,10 +27,6 @@ public class TwoFragment extends Fragment {
                 getFragmentManager().popBackStack();
             }
         });
-
-
-
-
         return rootView;
     }
 

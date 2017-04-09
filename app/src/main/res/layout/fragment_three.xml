@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e6e6e6"
-    tools:context="com.panachai.trainfragment.ThreeFragment">
+    tools:context="com.example.killercon.trainfragment2.OneFragment">
 
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Fragment Three [test Event listener]" />
+        android:text="Fragment Three" />
 
     <Button
         android:id="@+id/btn_close"

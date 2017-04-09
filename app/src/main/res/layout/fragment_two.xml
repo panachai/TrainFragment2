@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#e6e6e6"
-    tools:context="com.panachai.trainfragment.TwoFragment">
+    tools:context="com.example.killercon.trainfragment2.OneFragment">
 
     <TextView
         android:id="@+id/textView1"
