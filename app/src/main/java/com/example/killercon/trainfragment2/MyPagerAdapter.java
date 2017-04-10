@@ -3,8 +3,7 @@ package com.example.killercon.trainfragment2;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
 
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
@@ -20,13 +19,14 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
 
     public Fragment getItem(int position) {
         if (position == 0){
-            Log.i("Check", "Get Item 0");
-            return new OneFragment("Android,Development");  //test log
+            return OneFragment.newInstance(); //test bundle
         }
         else if (position == 1)
-            return new TwoFragment();
+            return TwoFragment.newInstance();
         else if (position == 2)
-            return new ThreeFragment();
+            return ThreeFragment.newInstance();
         return null;
     }
+
+
 }

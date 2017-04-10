@@ -10,6 +10,10 @@ import android.widget.Button;
 
 public class TwoFragment extends Fragment {
 
+    public static TwoFragment newInstance() {
+        TwoFragment fragment = new TwoFragment();
+        return fragment;
+    }
 
     public TwoFragment() {
         // Required empty public constructor
@@ -20,13 +24,6 @@ public class TwoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_two, container, false);
 
-        Button btn_close = (Button)rootView.findViewById(R.id.btn_close);
-        btn_close.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //getFragmentManager().beginTransaction().remove(TwoFragment.this).commit();
-                getFragmentManager().popBackStack();
-            }
-        });
         return rootView;
     }
 

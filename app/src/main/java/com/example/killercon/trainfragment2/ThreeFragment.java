@@ -8,12 +8,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class ThreeFragment extends Fragment {
+    TextView textView1;
 
-
-
+    public static ThreeFragment newInstance() {
+        ThreeFragment fragment = new ThreeFragment();
+        return fragment;
+    }
 
     public ThreeFragment() {
         // Required empty public constructor
@@ -25,23 +29,14 @@ public class ThreeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_three, container, false);
 
-        Button btn_close = (Button)rootView.findViewById(R.id.btn_close);
-        btn_close.setOnClickListener(new OnClickListener() {
+        textView1 = (TextView)rootView.findViewById(R.id.textView1);
 
-            public void onClick(View v) {
-
-                getFragmentManager().popBackStack();
-            }
-        });
-
-
-        // Inflate the layout for this fragment
         return rootView;
     }
 
-
-
-
+    public String getMyText() {
+        return textView1.getText().toString();
+    }
 
 
 }

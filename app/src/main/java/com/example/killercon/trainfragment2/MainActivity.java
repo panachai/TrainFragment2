@@ -1,13 +1,16 @@
 package com.example.killercon.trainfragment2;
 
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends FragmentActivity {
+    MyPagerAdapter adapter;
     ViewPager pager;
 
     @Override
@@ -15,9 +18,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
-        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+        adapter = new MyPagerAdapter(getSupportFragmentManager());
         pager = (ViewPager) findViewById(R.id.pager);//ทำ view pager
         pager.setAdapter(adapter);
 
@@ -35,5 +36,24 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
+//request button
+        Button btn_request = (Button)findViewById(R.id.btn_request);
+        btn_request.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                Fragment fragment = getActiveFragment(pager, 2);
+                ThreeFragment threeFragment = (ThreeFragment)fragment;
+                if(threeFragment != null) {
+                    String message = threeFragment.getMyText();
+                    Log.i("Check", message);
+                }
+            }
+        });
+
+    }
+
+    //ดึงข้อมูลว่า fragment อะไรกำลังแสดงอย่างบนหน้า activity
+    public Fragment getActiveFragment(ViewPager container, int position) {
+        String name = "android:switcher:" + container.getId() + ":" + position;
+        return getSupportFragmentManager().findFragmentByTag(name);
     }
 }
